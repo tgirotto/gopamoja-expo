@@ -17,10 +17,11 @@ class ConfirmationPage extends React.Component {
 
   componentWillMount() {
     const body = {
-      journey_id: this.props.journey_id,
+      segment_id: this.props.segment_id,
       first_name: this.props.first_name,
       last_name: this.props.last_name,
-      phone: this.props.phone
+      phone: this.props.phone,
+      date: this.props.date
     }
 
     fetch(CONFIG.api + '/ticket_request' , {
@@ -35,6 +36,7 @@ class ConfirmationPage extends React.Component {
     .then((response) => {
       if(response.err) {
         console.log(response.err);
+        console.log('here')
       } else {
         this.props.loadTicketConfirmation(response.ticket_request, response.journey, response.transaction, response.service_charge);
       }
@@ -53,7 +55,6 @@ class ConfirmationPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.first_name);
     return (
       <View style={styles.container}>
       {this.state.loading &&
@@ -279,7 +280,8 @@ const mapStateToProps = (state) => {
     first_name: state.details.first_name,
     last_name: state.details.last_name,
     phone: state.details.phone,
-    journey_id: state.journeys.selected_journey.id,
+    segment_id: state.journeys.selected_journey.segment_id,
+    date: state.journeys.selected_journey.date,
     confirmation_first_name: state.ticket.first_name,
     confirmation_last_name: state.ticket.last_name,
     confirmation_phone: state.ticket.phone,

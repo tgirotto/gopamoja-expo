@@ -8,6 +8,7 @@ export default class UpcomingList extends Component {
   }
 
   _keyExtractor = (item, index) => {
+    // console.log(item.id);
     return JSON.stringify(item.id)
   };
 
@@ -19,7 +20,6 @@ export default class UpcomingList extends Component {
   )};
 
   render() {
-    console.log('rendering journeys');
     return (
       <View style={styles.container}>
         <FlatList

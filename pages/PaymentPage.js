@@ -15,39 +15,6 @@ class PaymentPage extends React.Component {
     }
   }
 
-  componentWillMount() {
-    const body = {
-      journey_id: this.props.journey_id,
-      first_name: this.props.first_name,
-      last_name: this.props.last_name,
-      phone: this.props.phone
-    }
-
-    fetch(CONFIG.api + '/ticket_request' , {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      })
-    .then((response) => response.json())
-    .then((response) => {
-      if(response.err) {
-        console.log(response.err);
-      } else {
-        this.props.loadTicketConfirmation(response.ticket_request, response.journey);
-      }
-
-      this.setState({
-        loading: false
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    });
-  }
-
   finish() {
     this.props.navigation.navigate('Finish');
   }

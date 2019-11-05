@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, ActivityIndicator, Text, View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { connect } from "react-redux";
-import { startLoadingJourneys, endLoadingJourneys, setPhone } from "../redux/actions";
+import { startLoadingJourneys, endLoadingJourneys, setPhone, resetJourneys } from "../redux/actions";
 import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 import JourneyList from '../components/JourneyList';
 import Footer from '../components/Footer';
@@ -21,9 +21,9 @@ class JourneysPage extends React.Component {
   loadJourneys() {
     this.props.startLoadingJourneys();
 
-    let from = encodeURIComponent(this.props.from_name);
-    let to = encodeURIComponent(this.props.to_name);
-    let date = encodeURIComponent(this.props.date);
+    let from = encodeURIComponent(this.props.from_id);
+    let to = encodeURIComponent(this.props.to_id);
+    let date = encodeURIComponent(this.props.date.toISOString());
 
     let location = this.props.location;
     let latitude, longitude;
@@ -43,13 +43,15 @@ class JourneysPage extends React.Component {
     latitude = encodeURIComponent(latitude);
     longitude = encodeURIComponent(longitude);
 
+    const url = CONFIG.api +
+    "/journeys?date=" + date +
+    "&origin_id=" + from +
+    "&destination_id=" + to +
+    "&latitude=" + latitude +
+    "&longitude=" + longitude;
+
     fetch(
-      CONFIG.api +
-      "/journeys?date=" + date +
-      "&origin_name=" + from +
-      "&destination_name=" + to +
-      "&latitude=" + latitude +
-      "&longitude=" + longitude, {
+      url, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -61,6 +63,7 @@ class JourneysPage extends React.Component {
       if(response.err) {
         console.log(response.err);
       } else {
+        // this.props.resetJourneys();
         this.props.endLoadingJourneys(response.journeys);
       }
     })
@@ -75,7 +78,7 @@ class JourneysPage extends React.Component {
 
   componentDidUpdate() {
     if(this.props.loading_journeys) {
-        this.loadJourneys();
+      this.loadJourneys();
     }
   }
 
@@ -195,6 +198,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
+    from_id: state.search.from_id,
+    to_id: state.search.to_id,
     from_name: state.search.from_name,
     to_name: state.search.to_name,
     date: state.search.date,
@@ -207,7 +212,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   startLoadingJourneys: startLoadingJourneys,
   endLoadingJourneys: endLoadingJourneys,
-  setPhone: setPhone
+  setPhone: setPhone,
+  resetJourneys: resetJourneys
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(JourneysPage)

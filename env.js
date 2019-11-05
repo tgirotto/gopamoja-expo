@@ -4,13 +4,13 @@ const GOPAMOJA_ENV = {
     auth: 'https://auth.gopamoja.com',
   },
   staging: {
-    api: 'http://test.api.gopamoja.com/7',
+    api: 'https://test.api.gopamoja.com/7',
     auth: 'https://test.auth.gopamoja.com',
   },
   development: {
-    api: 'http://192.168.43.82:3001/7',
+    api: 'http://192.168.43.82:3001/8',
     auth: 'https://192.168.43.82:3001',
   }
 };
 
-export const CONFIG = GOPAMOJA_ENV['staging'];
+export const CONFIG = GOPAMOJA_ENV['development'];
