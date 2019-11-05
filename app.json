@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "goPamoja",
+    "slug": "gopamoja-mobile",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "7.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffcb37"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gopamoja.mobile"
+    },
+    "android": {
+      "package": "com.gopamoja.mobile",
+      "versionCode": 7
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "description": ""
+  },
+  "android": {
+    "versionCode": 7
+  },
+  "displayName": "goPamoja",
+  "name": "goPamoja"
+}

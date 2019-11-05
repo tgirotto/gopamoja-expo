@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "api-8056961671295238372-147982",
+  "private_key_id": "92b8e35eaef2aaaa78322ac4bf1cf7d32067727e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC8ZBBj/KuVcQnQ\ngUVReTaPmlxp9b+0G98JvLpvK3tt9uxjiWI3nGvVPsqFDExubfy6oVc0ElRM5RZJ\ndt8+YgaHbwuUevwqdVsoTguhGbnxHJaNLUlsqmj/Q/XZ7EsqOzKQ6MIllnesSjx9\n028l3ztdwTDpk8jsry8+b8g/sxHAt3xbDqkwX2WTCrDtqgoy5oWG5SjfvWOZd6nW\nJChL+o7OcPZ68ahC9gdToCM/ZMP154Kx+jUOW/rddm0TFakwpP+dnPw97PSH4EdV\n7ZvCyTSWxC3zgIdFZzwh2w4k2AaFfelvJK7fxZZ0Cl/jOLUdlFVWt26bbUGju7Q6\nuoTxfPH1AgMBAAECggEAMo7YJz1D/xMbAy3uIHNbRSaz7mvZSsjADqjrj7Inqdc+\nkWfpR+tetRfo2dP3Hxu9W4i5Emxo20oPtR+FwgQkpGwUu4BV9D8Se7qWPGHfGOoH\nLVQeBF+nVfozHIzhjy/b3i/ZCqVa8I3rtgjsJ0nFcN/L9KOIpJxPHX56Sz4PYZxm\nIIEa8jHpqdIY46Rjg/WjM2aR5DTMFSqCa6JWPraXh3TcIfd7tDjVE0uTZciap8vO\nENd7UPmsX/LnR6Pqrk389XU1HCs4JRZNwhHW8/jdt17wc5Z5FkYYlruQBKBvBhGf\nyI6HKRM1Toa3z+KoleFcNfqK6rcvcJRzTG2ItXxa8QKBgQDvR01rhsJPCyqMn0+w\nO+F4kckaHSv81v/GW7mHVhWdMqHtMKEyNbZLWWHEy0/gtVsq1w+eN7utPCo/4KrM\n314Q6HwLVTACvd+cawrF5Kg8rEf+M5WG9i7ywRd/q3tEptkWnh7dyIDaW3kmHzDX\nghiCvLRxWL2BjNza08F72deazwKBgQDJjmFqj8AymPAdAMiEz5ZEbW19obEgv7G1\nZM4pAkiHNUZleNbA/LTMgrST4Ym7XVUBceuiiMUFeFHzoxZ2vzCHI7fQV+DN64+P\nX5FeXurbJq02LOyfIHrZsnJMKDHpTrX4zauiwJm0GCjM6W5jCxDlxB+82WQ0pvhp\nBZ1DCXuH+wKBgGumq6k9xrvjLTB5GFQUjLs+87gg+cJWRFrMt6qwyyafOgTJhSxe\nx/Ycb4UnZ3eUgEDE4wzuzCwDTorQnGdx8xMuVWiP2frRzAHGkuE3n400gWtXb+V5\nauPihZz13I6ldjPbzc1AQOB8mQPSspmyuS5QkeoQ36miY1a8QGdlOcA3AoGAJnF1\nuzF34y6wfZesp0hAzQRiIdg5RJnLd2GmwMOiucc7ihcmPuD0Sx2S+7HE52vBzui/\nnNyhV42/c8zjd/q3cs8pPB/GzP/k/d+ohmtsOCiEWRTwfNlhFSyoCEaSXoGYy7/O\nwNgjeOoyvgK3/0QZEPn7Y7XDGxfNwZpEiIjCewkCgYB+ALokRSxtbFKDVsc/Plj9\n89ojpv/hmYBgklInMFNpwYKAR8wsyc1L/mP5NJdCMPY37JbMvliDvuu4ZCqskP4o\nR4naKCSxAWRsac/OQtXvHAFD6K+FGLsV4DodHgP/mlMaD2UrOthq748bB6BdhaVe\n0vgVDpHtw4Gt41Ri7Z9lww==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gopamoja-app-service@api-8056961671295238372-147982.iam.gserviceaccount.com",
+  "client_id": "106029144188932661707",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gopamoja-app-service%40api-8056961671295238372-147982.iam.gserviceaccount.com"
+}
