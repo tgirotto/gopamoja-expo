@@ -28,7 +28,7 @@ class JourneyButtons extends Component {
     this.props.navigation.navigate('Journeys');
   }
 
-  call() {
+  call() {0
    Linking.openURL('tel:${1234567890}');
   }
 

@@ -11,6 +11,10 @@ import {
   RESET_JOURNEYS,
   START_LOADING_JOURNEYS,
   END_LOADING_JOURNEYS,
+  RESET_GALLERY,
+  START_LOADING_GALLERY,
+  END_LOADING_GALLERY,
+  SELECT_COMPANY,
   SELECT_JOURNEY,
   SET_FIRST_NAME,
   SET_LAST_NAME,
@@ -167,3 +171,31 @@ export const loadTicketConfirmation = (ticket, journey, transaction, service_cha
    service_charge: service_charge
  }
 });
+
+export const resetGallery = () => ({
+ type: RESET_GALLERY,
+ payload: {}
+});
+
+export const selectCompany = (company_id) => ({
+ type: SELECT_COMPANY,
+ payload: {
+   company_id: company_id
+ }
+});
+
+export const startLoadingGallery = () => {
+  return {
+    type: START_LOADING_GALLERY,
+    payload: {}
+  };
+}
+
+export const endLoadingGallery = (images) => {
+  return {
+    type: END_LOADING_GALLERY,
+    payload: {
+      images: images
+    }
+  };
+}

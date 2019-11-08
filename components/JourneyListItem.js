@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity, Text, View, StyleSheet  } from 'react-native';
-import { selectJourney } from "../redux/actions";
+import { selectJourney, selectCompany } from "../redux/actions";
 import { connect } from "react-redux";
 import moment from "moment";
 
@@ -18,28 +18,49 @@ class JourneyListItem extends React.PureComponent {
   }
 
   selectJourney() {
+    console.log('select journey');
     this.props.selectJourney(this.props.journey);
-    this.props.navigation.navigate('Details')
+    this.props.navigation.navigate('Details');
+  }
+
+  openGallery() {
+    console.log('open gallery');
+    this.props.selectCompany(this.props.journey.company_id);
+    this.props.navigation.navigate('Gallery')
   }
 
   render() {
+    var wifi = (this.props.journey.wifi) ?
+      <Text style={styles.details}>WIFI</Text> :
+      <Text style={styles.details}></Text>
+
+    var ac = (this.props.journey.ac) ?
+      <Text style={styles.details}>AC</Text> :
+      <Text style={styles.details}></Text>
+
     return (
       <TouchableOpacity onPress={() => {this.selectJourney()}} style={styles.touchable}>
         <View style={styles.card}>
           <View style={styles.row}>
             <View style={styles.top}>
               <View style={styles.left}>
-                <Text style={styles.company}>{this.props.journey.company_name}</Text>
+                <TouchableOpacity onPress={() => {this.openGallery()}}>
+                    <Text style={styles.company}>{this.props.journey.company_name}</Text>
+                </TouchableOpacity>
               </View>
               <View style={styles.right}>
-                <Text style={styles.price}>TSh {this.props.journey.price}</Text>
+                <Text style={styles.seats}>{this.props.journey.available_seats} available</Text>
+                {wifi}
+                {ac}
               </View>
             </View>
             <View style={styles.bottom}>
               <View style={styles.left}>
                 <Text style={styles.date}>{this.extractDate(this.props.journey.date)}</Text>
               </View>
-              <View style={styles.right}></View>
+              <View style={styles.right}>
+                <Text style={styles.price}>TSh {this.props.journey.price}</Text>
+              </View>
             </View>
           </View>
         </View>
@@ -95,14 +116,26 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   date: {
-    fontSize: 16,
+    fontSize: 18,
     color: 'grey',
     fontFamily: 'varela-round'
   },
+  details: {
+    paddingLeft: 5,
+    fontSize: 12,
+    fontFamily: 'varela-round'
+  },
+  seats: {
+    paddingLeft: 5,
+    fontSize: 12,
+    fontFamily: 'varela-round',
+    color: 'red'
+  }
 });
 
 const mapDispatchToProps = {
-  selectJourney: selectJourney
+  selectJourney: selectJourney,
+  selectCompany: selectCompany
 };
 
 export default connect(null, mapDispatchToProps)(JourneyListItem)

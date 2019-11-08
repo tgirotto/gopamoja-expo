@@ -13,6 +13,7 @@ import ToPage from './pages/ToPage';
 import QuantityPage from './pages/QuantityPage';
 import JourneysPage from './pages/JourneysPage';
 import DetailsPage from './pages/DetailsPage';
+import GalleryPage from './pages/GalleryPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import CustomSearchConfirmationPage from './pages/CustomSearchConfirmationPage';
 import PaymentPage from './pages/PaymentPage';
@@ -145,6 +146,18 @@ const HomeStack = createStackNavigator({
         },
         headerTintColor: 'black',
         title: 'Finish'
+      }
+    }
+  },
+  Gallery: {
+    screen: GalleryPage,
+    navigationOptions: ({navigation}) =>  {
+      return {
+        headerStyle: {
+          backgroundColor: '#ffcb37',
+        },
+        headerTintColor: 'black',
+        title: 'Gallery'
       }
     }
   },
