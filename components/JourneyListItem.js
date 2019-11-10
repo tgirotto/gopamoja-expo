@@ -31,12 +31,10 @@ class JourneyListItem extends React.PureComponent {
 
   render() {
     var wifi = (this.props.journey.wifi) ?
-      <Text style={styles.details}>WIFI</Text> :
-      <Text style={styles.details}></Text>
+      <Text style={styles.details}>WIFI</Text> : null
 
     var ac = (this.props.journey.ac) ?
-      <Text style={styles.details}>AC</Text> :
-      <Text style={styles.details}></Text>
+      <Text style={styles.details}>AC</Text> : null
 
     return (
       <TouchableOpacity onPress={() => {this.selectJourney()}} style={styles.touchable}>

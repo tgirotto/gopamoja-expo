@@ -60,7 +60,7 @@ class DetailsPage extends React.Component {
             </View>
             <View style={styles.warningcontainer}>
               <Text style={styles.warningcontent}>
-                Please, make sure your phone number is correct. Otherwise, we will not be able to get in touch with you.
+                If the phone number is incorrect, we will not be able to contact you.
               </Text>
             </View>
             <TouchableOpacity onPress={() => {this.submit()}}>

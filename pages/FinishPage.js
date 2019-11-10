@@ -25,7 +25,7 @@ class FinishPage extends React.Component {
       <ScrollView>
         <View style={styles.content}>
           <Text style={styles.message}>
-            If your payment was successful, a GoPamoja agent will get in touch with you in the next 15 minutes.
+            If your payment was successful, a GoPamoja agent will contact you in the next 15 minutes.
           </Text>
           <TouchableOpacity onPress={() => {this.home()}}>
             <Text style={styles.submit}>FINISH</Text>

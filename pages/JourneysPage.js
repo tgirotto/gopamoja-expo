@@ -111,7 +111,9 @@ class JourneysPage extends React.Component {
             {(!this.props.loading_journeys && this.props.journeys.length < 1) &&
             <View style={styles.nojourneyscontainer}>
               <View style={styles.nojourneyscontent}>
-                <Text style={styles.nojourneys}>We could not find the journey you are looking for you in our records. However, you can leave your phone number below. We will do a custom search and get back to you within 30 minutes.</Text>
+                <Text style={styles.nojourneys}>
+                  We could not find the journey you are looking for.
+                  You can leave your phone number below and we will get back to you within 30 minutes.</Text>
               </View>
               <Text style={styles.detailslabel}>Phone</Text>
               <TextInput

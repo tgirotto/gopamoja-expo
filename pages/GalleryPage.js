@@ -53,13 +53,16 @@ class GalleryPage extends React.Component {
   }
 
   render() {
+    var imageList = (this.props.images.length > 0) ?
+      <ImageList images={this.props.images}></ImageList>
+      : <Text>No images available yet</Text>
     return (
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.journeylist}>
             {this.props.loading_images &&
             <ActivityIndicator animating = {true} size="large" color="black" />}
-            <ImageList images={this.props.images}></ImageList>
+            {!this.props.loading_images && imageList}
           </View>
           <Footer></Footer>
         </ScrollView>
@@ -67,8 +70,6 @@ class GalleryPage extends React.Component {
     );
   }
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
+    loading_images: state.gallery.loading_images,
     images: state.gallery.images,
     company_id: state.gallery.company_id
   }

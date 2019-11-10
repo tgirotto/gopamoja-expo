@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, TouchableOpacity, Text, View, StyleSheet  } from 'react-native';
+import { CONFIG } from '../env.js';
 import { connect } from "react-redux";
-import moment from "moment";
 
 class ImageListItem extends React.PureComponent {
   constructor(props){
@@ -9,25 +9,20 @@ class ImageListItem extends React.PureComponent {
   }
 
   render() {
-    console.log('rendering');
     return (
-      <View style={styles.card}>
-        <Image
-         style={{width: '100%', height: '100%'}}
-         source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006_edit_1.jpg'}}
-         resizeMode={'cover'} // cover or contain its upto you view look
-         />
-      </View>
+      <Image
+        source={{uri: CONFIG.images + '/' + this.props.image.filename}}
+        style={styles.image}/>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  card: {
+  image: {
     flex: 1,
-    flexDirection: 'row'
+    aspectRatio: 1.5,
+    resizeMode: 'contain'
   }
 });
-
 
 export default connect(null, null)(ImageListItem)

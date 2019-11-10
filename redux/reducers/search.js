@@ -12,9 +12,9 @@ function getTomorrow() {
 }
 
 const initialState = {
-  from_id: 1,
+  from_id: 2,
   from_name: 'Mbeya Central',
-  to_id: 2,
+  to_id: 1,
   to_name: 'Dar Es Salaam Ubungo',
   quantity: 1,
   date: getTomorrow(),
