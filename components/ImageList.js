@@ -8,7 +8,6 @@ export default class UpcomingList extends Component {
   }
 
   _keyExtractor = (item, index) => {
-    console.log(item);
     return JSON.stringify(item.id)
   };
 
