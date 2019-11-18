@@ -1,8 +1,9 @@
-import { END_LOADING_JOURNEYS, START_LOADING_JOURNEYS, RESET_JOURNEYS, SELECT_JOURNEY} from "../actionTypes";
+import { CLEAR_JOURNEYS, END_LOADING_JOURNEYS, START_LOADING_JOURNEYS, RESET_JOURNEYS, SELECT_JOURNEY} from "../actionTypes";
 
 const initialState = {
   journeys: [],
-  loading_journeys: true,
+  loading_journeys: false,
+  initialised_journeys: false,
   selected_journey: null
 };
 
@@ -12,7 +13,9 @@ export default function(state = initialState, action) {
       const { journey } = action.payload;
       return {...state, selected_journey: journey}
     case RESET_JOURNEYS:
-      return {...state, journeys: []}
+      return {...state, journeys: [], loading_journeys: false, initialised_journeys: false}
+    case CLEAR_JOURNEYS:
+      return {...state, journeys: [], loading_journeys: false}
     case END_LOADING_JOURNEYS:
       const { journeys } = action.payload;
       let new_journeys = [];
@@ -20,7 +23,7 @@ export default function(state = initialState, action) {
         new_journeys.push(journeys[i]);
       }
 
-      return {...state, journeys: new_journeys, loading_journeys: false};
+      return {...state, journeys: new_journeys, loading_journeys: false, initialised_journeys: true};
     case START_LOADING_JOURNEYS:
       return {...state, loading_journeys: true};
     default:

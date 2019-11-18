@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Linking, TouchableOpacity, Button, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { toggleTicketSaleModal, cancelTicketRequest, setSearchDate, resetJourneys, startLoadingJourneys } from "../redux/actions";
+import { toggleTicketSaleModal, cancelTicketRequest, setSearchDate, clearJourneys, startLoadingJourneys } from "../redux/actions";
 import { connect } from "react-redux";
 import moment from "moment";
 
@@ -15,14 +15,14 @@ class JourneyButtons extends Component {
   }
 
   previous() {
-    this.props.resetJourneys();
+    this.props.clearJourneys();
     this.props.setSearchDate(moment(this.props.date).subtract(1, "days").toDate());
     this.props.startLoadingJourneys();
     this.props.navigation.navigate('Journeys');
   }
 
   next() {
-    this.props.resetJourneys();
+    this.props.clearJourneys();
     this.props.setSearchDate(moment(this.props.date).add(1, "days").toDate());
     this.props.startLoadingJourneys();
     this.props.navigation.navigate('Journeys');
@@ -80,7 +80,7 @@ const mapDispatchToProps = {
   toggleTicketSaleModal: toggleTicketSaleModal,
   cancelTicketRequest: cancelTicketRequest,
   setSearchDate: setSearchDate,
-  resetJourneys: resetJourneys,
+  clearJourneys: clearJourneys,
   startLoadingJourneys: startLoadingJourneys
 };
 

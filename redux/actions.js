@@ -21,7 +21,8 @@ import {
   SET_PHONE,
   SET_PROMO,
   LOAD_TICKET_CONFIRMATION,
-  SET_SEARCH_LOCATION
+  SET_SEARCH_LOCATION,
+  CLEAR_JOURNEYS,
 } from "./actionTypes";
 
 export const loadOrigins = (origins) => {
@@ -124,6 +125,11 @@ export const endLoadingJourneys = (journeys) => {
 
 export const resetJourneys = () => ({
  type: RESET_JOURNEYS,
+ payload: {}
+});
+
+export const clearJourneys = () => ({
+ type: CLEAR_JOURNEYS,
  payload: {}
 });
 

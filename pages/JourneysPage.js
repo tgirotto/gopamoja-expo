@@ -63,6 +63,7 @@ class JourneysPage extends React.Component {
       if(response.err) {
         console.log(response.err);
       } else {
+        console.log('here');
         this.props.endLoadingJourneys(response.journeys);
       }
     })
@@ -76,7 +77,7 @@ class JourneysPage extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this.props.loading_journeys) {
+    if(this.props.loading_journeys && this.props.initialised_journeys) {
       this.loadJourneys();
     }
   }
@@ -206,11 +207,13 @@ const mapStateToProps = (state) => {
     date: state.search.date,
     journeys: state.journeys.journeys,
     loading_journeys: state.journeys.loading_journeys,
+    initialised_journeys: state.journeys.initialised_journeys,
     location: state.search.location
   }
 };
 
 const mapDispatchToProps = {
+  resetJourneys: resetJourneys,
   startLoadingJourneys: startLoadingJourneys,
   endLoadingJourneys: endLoadingJourneys,
   setPhone: setPhone,
