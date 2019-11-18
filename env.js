@@ -1,6 +1,6 @@
 const GOPAMOJA_ENV = {
   production: {
-    api: 'https://frontend.api.gopamoja.com/7',
+    api: 'https://frontend.api.gopamoja.com/8',
     images: 'https://gopamoja.com/images',
     auth: 'https://auth.gopamoja.com',
   },
@@ -16,4 +16,4 @@ const GOPAMOJA_ENV = {
   }
 };
 
-export const CONFIG = GOPAMOJA_ENV['staging'];
+export const CONFIG = GOPAMOJA_ENV['production'];
