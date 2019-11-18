@@ -16,4 +16,4 @@ const GOPAMOJA_ENV = {
   }
 };
 
-export const CONFIG = GOPAMOJA_ENV['development'];
+export const CONFIG = GOPAMOJA_ENV['production'];
