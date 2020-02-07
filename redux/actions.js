@@ -23,6 +23,10 @@ import {
   LOAD_TICKET_CONFIRMATION,
   SET_SEARCH_LOCATION,
   CLEAR_JOURNEYS,
+  SELECT_SEAT,
+  START_LOADING_LAYOUT,
+  END_LOADING_LAYOUT,
+  RESET_LAYOUT
 } from "./actionTypes";
 
 export const loadOrigins = (origins) => {
@@ -188,6 +192,31 @@ export const selectCompany = (company_id) => ({
  payload: {
    company_id: company_id
  }
+});
+
+export const selectSeat = (row, column) => ({
+ type: SELECT_SEAT,
+ payload: {
+   row: row,
+   column: column
+ }
+});
+
+export const startLoadingLayout = () => ({
+ type: START_LOADING_LAYOUT,
+ payload: {}
+});
+
+export const endLoadingLayout = (layout) => ({
+ type: END_LOADING_LAYOUT,
+ payload: {
+   layout: layout
+ }
+});
+
+export const resetLayout = () => ({
+ type: RESET_LAYOUT,
+ payload: {}
 });
 
 export const startLoadingGallery = () => {

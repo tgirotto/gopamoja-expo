@@ -21,7 +21,8 @@ class ConfirmationPage extends React.Component {
       first_name: this.props.first_name,
       last_name: this.props.last_name,
       phone: this.props.phone,
-      date: this.props.date
+      date: this.props.date,
+      seat: this.props.seat
     }
 
     fetch(CONFIG.api + '/ticket_request' , {
@@ -36,7 +37,6 @@ class ConfirmationPage extends React.Component {
     .then((response) => {
       if(response.err) {
         console.log(response.err);
-        console.log('here')
       } else {
         this.props.loadTicketConfirmation(response.ticket_request, response.journey, response.transaction, response.service_charge);
       }
@@ -281,6 +281,7 @@ const mapStateToProps = (state) => {
     last_name: state.details.last_name,
     phone: state.details.phone,
     segment_id: state.journeys.selected_journey.segment_id,
+    seat: state.layout.seat,
     date: state.journeys.selected_journey.date,
     confirmation_first_name: state.ticket.first_name,
     confirmation_last_name: state.ticket.last_name,

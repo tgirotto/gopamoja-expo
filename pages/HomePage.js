@@ -18,7 +18,8 @@ import {
   loadPopularOriginsDestinations,
   setSearchDate,
   setSearchLocation,
-  resetJourneys
+  resetJourneys,
+  resetLayout
 } from "../redux/actions";
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
@@ -98,6 +99,7 @@ class HomePage extends React.Component {
 
   search() {
     this.props.resetJourneys();
+    this.props.resetLayout();
     this.props.navigation.navigate('Journeys');
   }
 
@@ -282,7 +284,8 @@ const mapDispatchToProps = {
   setSearchDate: setSearchDate,
   resetJourneys: resetJourneys,
   initialisePassengers: initialisePassengers,
-  setSearchLocation: setSearchLocation
+  setSearchLocation: setSearchLocation,
+  resetLayout: resetLayout
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

@@ -4,18 +4,18 @@ const initialState = {
   journeys: [],
   loading_journeys: false,
   initialised_journeys: false,
-  selected_journey: null
+  selected_journey: null,
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case SELECT_JOURNEY:
       const { journey } = action.payload;
-      return {...state, selected_journey: journey}
+      return {...state, selected_journey: journey, seat: {row : null, column: null}}
     case RESET_JOURNEYS:
-      return {...state, journeys: [], loading_journeys: false, initialised_journeys: false}
+      return {...state, journeys: [], loading_journeys: false, initialised_journeys: false, seat: {row : null, column: null}}
     case CLEAR_JOURNEYS:
-      return {...state, journeys: [], loading_journeys: false}
+      return {...state, journeys: [], loading_journeys: false, seat: {row : null, column: null}}
     case END_LOADING_JOURNEYS:
       const { journeys } = action.payload;
       let new_journeys = [];

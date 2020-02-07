@@ -63,7 +63,6 @@ class JourneysPage extends React.Component {
       if(response.err) {
         console.log(response.err);
       } else {
-        console.log('here');
         this.props.endLoadingJourneys(response.journeys);
       }
     })

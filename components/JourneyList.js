@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, FlatList, StyleSheet, Text, View } from 'react-native';
 import JourneyListItem from './JourneyListItem';
 
-export default class UpcomingList extends Component {
+export default class JourneyList extends Component {
   constructor(props){
     super(props);
   }

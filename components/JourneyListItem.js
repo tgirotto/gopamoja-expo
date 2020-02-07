@@ -18,13 +18,11 @@ class JourneyListItem extends React.PureComponent {
   }
 
   selectJourney() {
-    console.log('select journey');
     this.props.selectJourney(this.props.journey);
-    this.props.navigation.navigate('Details');
+    this.props.navigation.navigate('Seat');
   }
 
   openGallery() {
-    console.log('open gallery');
     this.props.selectCompany(this.props.journey.company_id);
     this.props.navigation.navigate('Gallery')
   }

@@ -12,6 +12,7 @@ import FromPage from './pages/FromPage';
 import ToPage from './pages/ToPage';
 import QuantityPage from './pages/QuantityPage';
 import JourneysPage from './pages/JourneysPage';
+import SeatPage from './pages/SeatPage';
 import DetailsPage from './pages/DetailsPage';
 import GalleryPage from './pages/GalleryPage';
 import ConfirmationPage from './pages/ConfirmationPage';
@@ -98,6 +99,18 @@ const HomeStack = createStackNavigator({
         },
         headerTintColor: 'black',
         title: 'Journeys'
+      }
+    }
+  },
+  Seat: {
+    screen: SeatPage,
+    navigationOptions: ({navigation}) =>  {
+      return {
+        headerStyle: {
+          backgroundColor: '#ffcb37',
+        },
+        headerTintColor: 'black',
+        title: 'Seat'
       }
     }
   },
